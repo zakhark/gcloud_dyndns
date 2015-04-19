@@ -7,8 +7,10 @@
 zone="google"
 domain="www.google.com."
 new_IP=`curl -s http://icanhazip.com`
+gcloud_bin_path="~/google-cloud-sdk/bin"
 ##### End Configuration Section #####
 ##### Code Magic #####
+export PATH=$gcloud_bin_path:$PATH
 gcloud dns record-sets transaction abort -z $zone -q
 existing_record=`gcloud dns record-sets -z $zone list --name="$domain" | grep $domain`
 existing_ip=`echo $existing_record | awk {'print $4'}`
