@@ -1,6 +1,7 @@
 #!/bin/sh
 #
-#
+# https://github.com/zakhark/gcloud_dyndns
+# Updated on 04/19/2015 by Zakhar Kleyman
 #
 ##### Configuration Section #####
 zone="google"
@@ -29,6 +30,4 @@ else
 	fi
 	gcloud dns record-sets transaction execute -z $zone
 fi
-
-
-
+##### Done #####
